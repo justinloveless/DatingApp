@@ -7,7 +7,12 @@ namespace API.Extensions
         public static string GetUsername(this ClaimsPrincipal user)
         {
             // gets the username from the token that we're using
-            return user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return user.FindFirst(ClaimTypes.Name)?.Value;
+        }
+        public static int GetUserId(this ClaimsPrincipal user)
+        {
+            // gets the username from the token that we're using
+            return int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         }
     }
 }
