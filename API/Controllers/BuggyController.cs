@@ -49,7 +49,8 @@ namespace API.Controllers
         public ActionResult<string> GetBadRequest()
         {
             // return BadRequest("This was not a good request");
-            return StatusCode(400, "This was not a good request");
+            return BadRequest();
+            // return StatusCode(400, "This was not a good request");
         }
     }
 }
